@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+<!-- To specify the file path from the terminal, enter: 
+roslaunch calibration_publisher calibration_publisher extrinsics_file_path:=/path/to/file.json -->
+  <arg name="extrinsics_file_path" default=""/>
+
+  <node name="calibration_publisher_main" pkg="calibration_publisher" type="calibration_publisher_main">
+    <param name="robot_name" value="$(arg robot_name)"/>
+    <param name="extrinsics_file_path" value="$(arg extrinsics_file_path)"/>
+  </node>
+
+</launch>
